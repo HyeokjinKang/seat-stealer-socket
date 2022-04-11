@@ -1,0 +1,22 @@
+{
+  "name": "seat-stealer-socket",
+  "version": "1.0.0",
+  "main": "src/",
+  "author": "Coupy",
+  "license": "MIT",
+  "description": "KDMHS 19기 WP학생들을 위한 온라인 자리배치 프로그램의 소켓 서버입니다.",
+  "scripts": {
+    "build": "tsc",
+    "auto-build": "tsc-watch",
+    "start": "supervisor dist/index.js"
+  },
+  "dependencies": {
+    "socket.io": "^4.4.1",
+    "supervisor": "^0.12.0",
+    "typescript": "^4.6.3"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.23",
+    "tsc-watch": "^5.0.3"
+  }
+}
