@@ -51,6 +51,10 @@ io.on("connection", (socket) => {
     io.to(id).emit("seat-confirm");
   });
 
+  socket.on("removed", (id) => {
+    io.to(id).emit("removed");
+  });
+
   socket.on("disconnect", () => {
     if (users.undefined.indexOf(socket.id) != -1) users.undefined.splice(users.undefined.indexOf(socket.id), 1);
     else if (users.student.indexOf(socket.id) != -1) {
