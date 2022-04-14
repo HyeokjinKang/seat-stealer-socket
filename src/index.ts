@@ -55,6 +55,18 @@ io.on("connection", (socket) => {
     io.to(id).emit("removed");
   });
 
+  socket.on("seat-fight", (id) => {
+    io.to(id).emit("seat-fight");
+  });
+
+  socket.on("seat-wait", (id) => {
+    io.to(id).emit("seat-wait");
+  });
+
+  socket.on("seat-vote-failed", (id) => {
+    io.to(id).emit("seat-vote-failed");
+  });
+
   socket.on("disconnect", () => {
     if (users.undefined.indexOf(socket.id) != -1) users.undefined.splice(users.undefined.indexOf(socket.id), 1);
     else if (users.student.indexOf(socket.id) != -1) {
