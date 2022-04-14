@@ -47,8 +47,8 @@ io.on("connection", (socket) => {
     io.to(id).emit("seat-versus", len);
   });
 
-  socket.on("seat-confirm", (id) => {
-    io.to(id).emit("seat-confirm");
+  socket.on("seat-confirm", (id, num) => {
+    io.to(id).emit("seat-confirm", num);
   });
 
   socket.on("removed", (id) => {
