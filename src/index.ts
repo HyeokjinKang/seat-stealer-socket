@@ -67,6 +67,10 @@ io.on("connection", (socket) => {
     io.to(id).emit("seat-vote-failed");
   });
 
+  socket.on("random", (id) => {
+    io.to(id).emit("random");
+  });
+
   socket.on("disconnect", () => {
     if (users.undefined.indexOf(socket.id) != -1) users.undefined.splice(users.undefined.indexOf(socket.id), 1);
     else if (users.student.indexOf(socket.id) != -1) {
